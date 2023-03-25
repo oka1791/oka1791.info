@@ -2,12 +2,14 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from "../components/seo"
 import "./links.css"
+import Signal from "../assets/signal.svg"
 import { IconContext } from 'react-icons'
 import {FaTwitter, FaGithub, FaDiscord} from "react-icons/fa"
 const LinksPage = ({location}) => {
   return (
     <Layout location={location}>
-      <div class="container">
+      <h1>Links</h1>
+      <div className="container">
         <IconContext.Provider value={{color: '#ccc', size: '50px' }}>
           <a href="https://github.com/oka0509" target="_blanck">
             <FaGithub />
@@ -22,7 +24,10 @@ const LinksPage = ({location}) => {
           <a href="#" target="_blanck">
             <FaDiscord />
           </a>
-        </IconContext.Provider>       
+        </IconContext.Provider>
+        <a href="https://bookmeter.com/users/1370570" target="_blanck" id ="bookmeter">
+          <Signal style={{ height: 53, width: 50 }} fill={"#ccc"}/>
+        </a>
       </div>
     </Layout>
   )

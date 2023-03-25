@@ -1,5 +1,6 @@
 import * as React from "react"
 import {Link} from "gatsby"
+import "./header.css"
 import {StaticImage} from "gatsby-plugin-image"
 import {Navbar, Nav, Container} from 'react-bootstrap';
 
@@ -17,7 +18,7 @@ const Header = ({location}) => {
   } else {
     return (
       <header>
-        <Navbar bg="dark" expand="lg" className="mb-5">
+        <Navbar bg="dark" variant="dark" expand="sm" className="mb-5">
           <Container>
             <Link to="/" className="navbar-brand">
               <StaticImage
