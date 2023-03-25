@@ -4,7 +4,7 @@ import Seo from "../components/seo"
 import "./links.css"
 import Signal from "../assets/signal.svg"
 import { IconContext } from 'react-icons'
-import {FaTwitter, FaGithub, FaDiscord} from "react-icons/fa"
+import {FaTwitter, FaGithub} from "react-icons/fa"
 const LinksPage = ({location}) => {
   return (
     <Layout location={location}>
@@ -18,11 +18,6 @@ const LinksPage = ({location}) => {
         <IconContext.Provider value={{color: '#ccc', size: '50px' }}>
           <a href="https://twitter.com/oka1791" target="_blanck">
             <FaTwitter />
-          </a>
-        </IconContext.Provider>
-        <IconContext.Provider value={{color: '#ccc', size: '50px' }}>
-          <a href="#" target="_blanck">
-            <FaDiscord />
           </a>
         </IconContext.Provider>
         <a href="https://bookmeter.com/users/1370570" target="_blanck" id ="bookmeter">
