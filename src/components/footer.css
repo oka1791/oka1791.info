@@ -3,3 +3,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.nav-link {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}

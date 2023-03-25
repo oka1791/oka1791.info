@@ -17,7 +17,7 @@ const Header = ({location}) => {
   } else {
     return (
       <header>
-        <Navbar bg="light" expand="lg" className="mb-5">
+        <Navbar bg="dark" expand="lg" className="mb-5">
           <Container>
             <Link to="/" className="navbar-brand">
               <StaticImage
