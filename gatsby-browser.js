@@ -10,6 +10,6 @@ import "./src/style.css"
 import "prismjs/themes/prism.css"
 
 // Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import "@fortawesome/fontawesome-svg-core/styles.css"

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import {FaCoffee } from "react-icons/fa"
+import { FaCoffee } from "react-icons/fa"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -25,12 +25,16 @@ const Bio = () => {
 
   return (
     <div className="bio">
-    <FaCoffee/>
+      <FaCoffee />
       {author?.name && (
         <p>
           Written by
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}  target="_blank" rel="noopener noreferrer">
+          <a
+            href={`https://twitter.com/${social?.twitter || ``}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {author.name}
           </a>
           {` `}

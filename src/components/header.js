@@ -1,20 +1,24 @@
 import * as React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import "./header.css"
-import {StaticImage} from "gatsby-plugin-image"
-import {Navbar, Nav, Container} from 'react-bootstrap'
-import { IconContext } from 'react-icons'
-import {IoReturnUpBack} from "react-icons/io5"
+import { StaticImage } from "gatsby-plugin-image"
+import { Navbar, Nav, Container } from "react-bootstrap"
+import { IconContext } from "react-icons"
+import { IoReturnUpBack } from "react-icons/io5"
 
-const Header = ({location}) => {
-  const basePaths = [`${__PATH_PREFIX__}/`, `${__PATH_PREFIX__}/about/`, `${__PATH_PREFIX__}/links/`]
+const Header = ({ location }) => {
+  const basePaths = [
+    `${__PATH_PREFIX__}/`,
+    `${__PATH_PREFIX__}/about/`,
+    `${__PATH_PREFIX__}/links/`,
+  ]
   const isPostPath = !basePaths.includes(location.pathname)
   if (isPostPath) {
     return (
       <header className="header">
         <Link className="header-link-home" to="/">
-          <IconContext.Provider value={{size: '30px'}}>
-              <IoReturnUpBack />
+          <IconContext.Provider value={{ size: "30px" }}>
+            <IoReturnUpBack />
           </IconContext.Provider>
           Back to home
         </Link>
@@ -30,7 +34,7 @@ const Header = ({location}) => {
                 src="../images/profile-pic.png"
                 width={32}
                 height={32}
-                formats={['AUTO', 'WEBP', 'AVIF']}
+                formats={["AUTO", "WEBP", "AVIF"]}
                 className="d-inline-block align-top me-2"
                 quality={95}
                 alt=""
@@ -40,15 +44,15 @@ const Header = ({location}) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ms-auto">
-                  <Link to="/" className="nav-link">
-                    Home
-                  </Link>
-                  <Link to="/about/" className="nav-link">
-                    About
-                  </Link>
-                  <Link to="/links/" className="nav-link">
-                    Links
-                  </Link>                  
+                <Link to="/" className="nav-link">
+                  Home
+                </Link>
+                <Link to="/about/" className="nav-link">
+                  About
+                </Link>
+                <Link to="/links/" className="nav-link">
+                  Links
+                </Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

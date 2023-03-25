@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"

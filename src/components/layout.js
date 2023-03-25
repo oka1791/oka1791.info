@@ -5,11 +5,11 @@ import Footer from "./footer"
 const Layout = ({ location, title, children }) => {
   return (
     <div>
-      <Header location={location}/>
+      <Header location={location} />
       <div className="global-wrapper">
-       <main>{children}</main>
+        <main>{children}</main>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
