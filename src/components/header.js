@@ -2,16 +2,21 @@ import * as React from "react"
 import {Link} from "gatsby"
 import "./header.css"
 import {StaticImage} from "gatsby-plugin-image"
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Navbar, Nav, Container} from 'react-bootstrap'
+import { IconContext } from 'react-icons'
+import {IoReturnUpBack} from "react-icons/io5"
 
 const Header = ({location}) => {
   const basePaths = [`${__PATH_PREFIX__}/`, `${__PATH_PREFIX__}/about/`, `${__PATH_PREFIX__}/links/`]
   const isPostPath = !basePaths.includes(location.pathname)
   if (isPostPath) {
     return (
-      <header>
+      <header className="header">
         <Link className="header-link-home" to="/">
-          Back to page
+          <IconContext.Provider value={{size: '30px'}}>
+              <IoReturnUpBack />
+          </IconContext.Provider>
+          Back to home
         </Link>
       </header>
     )

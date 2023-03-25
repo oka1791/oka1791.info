@@ -1,18 +1,42 @@
 .nav-link {
   position: relative; /*アンダーラインの位置を決めるための基準 */
-  }
+}
   
 .nav-link::after {
-  position: absolute; /*親要素であるaタグを基準に位置を指定*/
-  left: 0;            /*アンダーラインを各メニュー（aタグ）の左端に指定*/
-  content: '';        /*本来は、擬似要素に入るテキストなどを’’内に指定。今回はアンダーラインなので何も記載しない*/
-  width: 100%;        /*アンダーラインを各aタグの幅に合わせる*/
-  height: 2px;        /*アンダーラインの高さ（太さ）*/
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
   bottom: -1px;
   background: green;
-  visibility: hidden; /*アンダーラインの色*/
-  }
+  visibility: hidden; 
+}
 
 .nav-link:hover::after {
-  visibility: visible; /*ホバー後、アンダーラインを可視化する*/
+  visibility: visible;
+}
+
+.header-link-home {
+  position: relative;
+}
+
+
+.header-link-home::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  bottom: -1px;
+  background: green;
+  visibility: hidden; 
+}
+
+.header-link-home:hover::after {
+  visibility: visible;
+}
+
+.header a{
+  color: black;
 }
