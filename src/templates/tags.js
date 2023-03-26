@@ -4,7 +4,7 @@ import moment from "moment"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Layout from "../components/layout"
-import Badge from 'react-bootstrap/Badge'
+import Badge from "react-bootstrap/Badge"
 import Seo from "../components/seo"
 import Sidebar from "../components/sidebar"
 import Bio from "../components/bio"
@@ -64,10 +64,9 @@ const TagsTemplate = ({ data, pageContext, location }) => {
                           tags.map(tag => {
                             return (
                               <>
-                              <Link to={`/tags/${tag}/`} itemProp="url">
-                                <Badge bg="secondary" >{tag}</Badge>
-                              </Link>
-                              {' '}
+                                <Link to={`/tags/${tag}/`} itemProp="url">
+                                  <Badge bg="secondary">{tag}</Badge>
+                                </Link>{" "}
                               </>
                             )
                           })}

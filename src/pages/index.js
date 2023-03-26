@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import Badge from 'react-bootstrap/Badge'
+import Badge from "react-bootstrap/Badge"
 import Seo from "../components/seo"
 import Sidebar from "../components/sidebar"
 
@@ -55,10 +55,9 @@ const BlogIndex = ({ data, location }) => {
                           tags.map(tag => {
                             return (
                               <>
-                              <Link to={`/tags/${tag}/`} itemProp="url">
-                                <Badge bg="secondary" >{tag}</Badge>
-                              </Link>
-                              {' '}
+                                <Link to={`/tags/${tag}/`} itemProp="url">
+                                  <Badge bg="secondary">{tag}</Badge>
+                                </Link>{" "}
                               </>
                             )
                           })}
