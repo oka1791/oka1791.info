@@ -34,7 +34,7 @@ const TagsTemplate = ({ data, pageContext, location }) => {
           <Sidebar />
         </Col>
         <Col sm={9}>
-          <h1>{tagHeader}</h1>
+          <h2>{tagHeader}</h2>
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
