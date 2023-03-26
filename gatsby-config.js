@@ -41,13 +41,13 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: "gatsby-remark-external-links",
             options: {
-              target: '_blank',
-              rel: 'noopener noreferrer',
+              target: "_blank",
+              rel: "noopener noreferrer",
             },
           },
-          'gatsby-remark-graphviz',
+          "gatsby-remark-graphviz",
           {
             resolve: `gatsby-remark-images`,
             options: {

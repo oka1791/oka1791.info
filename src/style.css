@@ -350,14 +350,15 @@ a:focus {
   padding: 5px 0;
 }
 
-.table-of-contents ol {
+.table-of-contents ul {
   list-style-type: disc;
   margin: 0;
   padding: 0 1.2em;
   overflow: hidden;
 }
 
-.table-of-contents ol ol {
+.table-of-contents ul ul {
+  list-style-type: circle;
   margin-top: 5px;
 }
 
