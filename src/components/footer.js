@@ -4,7 +4,7 @@ import "./footer.css"
 const Footer = () => {
   return (
     <footer className="defaultFooter">
-      Copyright © {new Date().getFullYear()} oka1791, Built with
+      Copyright © {new Date().getFullYear()} oka1791, Built with&nbsp;
       <a
         href="https://www.gatsbyjs.com"
         target="_blank"
