@@ -1,18 +1,19 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import "./header.css"
-import { StaticImage } from "gatsby-plugin-image"
 import { Navbar, Nav, Container } from "react-bootstrap"
 import { IconContext } from "react-icons"
 import { IoReturnUpBack } from "react-icons/io5"
 
-const Header = ({ location }) => {
+const Header = ({ location, title }) => {
   const basePaths = [
     `${__PATH_PREFIX__}/`,
     `${__PATH_PREFIX__}/about/`,
     `${__PATH_PREFIX__}/links/`,
   ]
-  const isPostPath = !basePaths.includes(location.pathname)
+  const tagPath = new RegExp(__PATH_PREFIX__ + "/tags/(.)+")
+  const isPostPath =
+    !basePaths.includes(location.pathname) && !location.pathname.match(tagPath)
   if (isPostPath) {
     return (
       <header className="header">
@@ -30,16 +31,7 @@ const Header = ({ location }) => {
         <Navbar bg="dark" variant="dark" expand="sm" className="mb-5">
           <Container>
             <Link to="/" className="navbar-brand">
-              <StaticImage
-                src="../images/profile-pic.png"
-                width={32}
-                height={32}
-                formats={["AUTO", "WEBP", "AVIF"]}
-                className="d-inline-block align-top me-2"
-                quality={95}
-                alt=""
-              />
-              oka1791のブログ(仮)
+              {title}
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

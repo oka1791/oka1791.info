@@ -20,9 +20,10 @@ const Sidebar = () => {
       <h3>Tags</h3>
       <ul>
         {tags.map(tag => {
+          const tagPath = `/tags/${tag.tag}/`
           return (
             <li>
-              <Link to="#">
+              <Link to={tagPath}>
                 {tag.tag}({tag.totalCount})
               </Link>
             </li>
