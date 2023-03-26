@@ -26,6 +26,8 @@
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.8.0",
     "gatsby-remark-autolink-headers": "^6.8.0",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-graphviz": "^5.8.0",
     "gatsby-remark-images": "^7.8.0",
     "gatsby-remark-prismjs": "^7.8.0",
     "gatsby-remark-responsive-iframe": "^6.8.0",

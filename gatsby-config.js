@@ -41,6 +41,14 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            },
+          },
+          'gatsby-remark-graphviz',
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
@@ -52,6 +60,18 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: "table-of-contents",
+            },
+          },
+          `gatsby-remark-autolink-headers`,
           `gatsby-remark-prismjs`,
         ],
       },
@@ -127,25 +147,6 @@ module.exports = {
         rule: {
           include: /assets/, // See below to configure properly
         },
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: "Table of Contents",
-              tight: false,
-              ordered: false,
-              fromHeading: 1,
-              toHeading: 6,
-              className: "table-of-contents",
-            },
-          },
-          `gatsby-remark-autolink-headers`,
-        ],
       },
     },
   ],
