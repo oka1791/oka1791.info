@@ -335,3 +335,36 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+.table-of-contents {
+  margin-bottom: 30px;
+  padding: 1em 1em 1em 2em;
+  border: 1px solid #999;
+  background-color: #f0f0f0;
+}
+
+.table-of-contents div {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.table-of-contents ol {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0 1.2em;
+  overflow: hidden;
+}
+
+.table-of-contents ol ol {
+  margin-top: 5px;
+}
+
+.table-of-contents li {
+  padding: 5px 0;
+}
+
+.table-of-contents a {
+  color: #166c9d;
+}
