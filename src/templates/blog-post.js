@@ -2,6 +2,9 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Header from "../components/header"
+import Badge from 'react-bootstrap/Badge'
+import Footer from '../components/footer'
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -10,8 +13,9 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
   const tags = post.frontmatter.tags
   return (
-    <Layout location={location} title={siteTitle}>
-      <article
+    <div className="blogpost-wrapper">
+      <Header location={location}/>
+     <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
@@ -23,7 +27,15 @@ const BlogPostTemplate = ({
             {tags &&
               tags.length > 0 &&
               tags.map(tag => {
-                return <button>{tag}</button>
+                return (
+                <>
+                <Link to={`/tags/${tag}/`} itemProp="url">
+                <Badge bg="secondary">{tag}</Badge>
+                </Link>
+                {' '}
+                </>
+                
+                )
               })}
           </div>
         </header>
@@ -59,7 +71,8 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-    </Layout>
+      <Footer />
+    </div>
   )
 }
 

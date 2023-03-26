@@ -1,16 +1,16 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import Badge from 'react-bootstrap/Badge'
 import Seo from "../components/seo"
 import Sidebar from "../components/sidebar"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -27,15 +27,15 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Row>
-        <Col sm={4}>
+        <Col sm={3}>
           <Bio />
           <Sidebar />
         </Col>
-        <Col sm={8}>
+        <Col sm={9}>
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
-
+              const tags = post.frontmatter.tags
               return (
                 <li key={post.fields.slug}>
                   <article
@@ -49,6 +49,20 @@ const BlogIndex = ({ data, location }) => {
                           <span itemProp="headline">{title}</span>
                         </Link>
                       </h2>
+                      <div className="tags-index">
+                        {tags &&
+                          tags.length > 0 &&
+                          tags.map(tag => {
+                            return (
+                              <>
+                              <Link to={`/tags/${tag}/`} itemProp="url">
+                                <Badge bg="secondary" >{tag}</Badge>
+                              </Link>
+                              {' '}
+                              </>
+                            )
+                          })}
+                      </div>
                       <small>{post.frontmatter.date}</small>
                     </header>
                     <section>
@@ -96,6 +110,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }

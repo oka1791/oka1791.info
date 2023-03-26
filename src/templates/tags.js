@@ -4,6 +4,7 @@ import moment from "moment"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Layout from "../components/layout"
+import Badge from 'react-bootstrap/Badge'
 import Seo from "../components/seo"
 import Sidebar from "../components/sidebar"
 import Bio from "../components/bio"
@@ -28,11 +29,11 @@ const TagsTemplate = ({ data, pageContext, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo title={tagHeader} />
       <Row>
-        <Col sm={4}>
+        <Col sm={3}>
           <Bio />
           <Sidebar />
         </Col>
-        <Col sm={8}>
+        <Col sm={9}>
           <h1>{tagHeader}</h1>
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {
@@ -62,9 +63,12 @@ const TagsTemplate = ({ data, pageContext, location }) => {
                           tags.length > 0 &&
                           tags.map(tag => {
                             return (
+                              <>
                               <Link to={`/tags/${tag}/`} itemProp="url">
-                                <button>{tag}</button>
+                                <Badge bg="secondary" >{tag}</Badge>
                               </Link>
+                              {' '}
+                              </>
                             )
                           })}
                       </div>
