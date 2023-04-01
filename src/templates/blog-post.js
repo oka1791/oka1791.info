@@ -69,7 +69,7 @@ const BlogPostTemplate = ({
             </li>
           </ul>
         </nav>
-        <Footer />
+        <Footer title={post.frontmatter.title} location={location} />
       </div>
     </>
   )

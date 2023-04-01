@@ -10,7 +10,7 @@ const AboutPage = ({ location, data }) => {
     <Layout location={location} title={siteTitle}>
       <h1>About</h1>
       <p>
-        okaといいます。私大数学科の3年で、卒業後はWebエンジニアをやります。趣味はアニメ、読書(ハードSF)、コーヒーです。
+        okaといいます。私大数学科の4年で、卒業後はWebエンジニアをやります。趣味はアニメ、読書(ハードSF)、コーヒーです。
       </p>
     </Layout>
   )

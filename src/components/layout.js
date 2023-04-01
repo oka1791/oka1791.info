@@ -9,7 +9,7 @@ const Layout = ({ location, title, children }) => {
       <div className="global-wrapper">
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer location={location} />
     </div>
   )
 }

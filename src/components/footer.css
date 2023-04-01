@@ -1,5 +1,4 @@
 .defaultFooter {
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -10,4 +9,16 @@
 
 .navbar-brand {
   color: white;
+}
+
+.shareIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.bottom {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
