@@ -19,7 +19,7 @@ const Footer = ({ title, location }) => {
   const tagPath = new RegExp(__PATH_PREFIX__ + "/tags/(.)+")
   const isPostPath =
     !basePaths.includes(location.pathname) && !location.pathname.match(tagPath)
-  const url = __PATH_PREFIX__ + location.pathname
+  const url = "https://oka1791-info.netlify.app" + location.pathname
   const shareIcons = (
     <div className="shareIcons">
       <FacebookShareButton title={title} url={url}>
