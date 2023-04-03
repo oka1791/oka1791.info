@@ -11,8 +11,8 @@ const BlogPostTemplate = ({
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
   const tags = post.frontmatter.tags
-  const previousPostPath = `/posts${previous? previous.fields.slug : ""}`
-  const nextPostPath = `/posts${next? next.fields.slug : ""}`
+  const previousPostPath = `/posts${previous ? previous.fields.slug : ""}`
+  const nextPostPath = `/posts${next ? next.fields.slug : ""}`
   return (
     <>
       <Header location={location} title={siteTitle} />
