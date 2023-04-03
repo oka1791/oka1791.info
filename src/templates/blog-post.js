@@ -11,6 +11,8 @@ const BlogPostTemplate = ({
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
   const tags = post.frontmatter.tags
+  const previousPostPath = `/posts${previous? previous.fields.slug : ""}`
+  const nextPostPath = `/posts${next? next.fields.slug : ""}`
   return (
     <>
       <Header location={location} title={siteTitle} />
@@ -54,16 +56,16 @@ const BlogPostTemplate = ({
             }}
           >
             <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+              {next && (
+                <Link to={nextPostPath} rel="next">
+                  ← {next.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+              {previous && (
+                <Link to={previousPostPath} rel="prev">
+                  {previous.frontmatter.title} →
                 </Link>
               )}
             </li>
