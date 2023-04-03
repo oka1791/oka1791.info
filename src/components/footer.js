@@ -11,14 +11,8 @@ import {
   TwitterIcon,
 } from "react-share"
 const Footer = ({ title, location }) => {
-  const basePaths = [
-    `${__PATH_PREFIX__}/`,
-    `${__PATH_PREFIX__}/about/`,
-    `${__PATH_PREFIX__}/links/`,
-  ]
-  const tagPath = new RegExp(__PATH_PREFIX__ + "/tags/(.)+")
-  const isPostPath =
-    !basePaths.includes(location.pathname) && !location.pathname.match(tagPath)
+  const postPath = new RegExp(__PATH_PREFIX__ + "/posts/(.)+")
+  const isPostPath = location.pathname.match(postPath)
   const url = "https://oka1791-info.netlify.app" + location.pathname
   const shareIcons = (
     <div className="shareIcons">

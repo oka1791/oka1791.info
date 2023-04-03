@@ -36,6 +36,7 @@ const BlogIndex = ({ data, location }) => {
             {posts.map(post => {
               const title = post.frontmatter.title || post.fields.slug
               const tags = post.frontmatter.tags
+              const postPath = `posts${post.fields.slug}`
               return (
                 <li key={post.fields.slug}>
                   <article
@@ -45,7 +46,7 @@ const BlogIndex = ({ data, location }) => {
                   >
                     <header>
                       <h2>
-                        <Link to={post.fields.slug} itemProp="url">
+                        <Link to={postPath} itemProp="url">
                           <span itemProp="headline">{title}</span>
                         </Link>
                       </h2>
